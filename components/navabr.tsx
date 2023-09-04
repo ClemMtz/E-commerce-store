@@ -6,7 +6,7 @@ import Container from "@/components/ui/container";
 import MainNav from "@/components/main-nav";
 import NavbarAction from "@/components/navbar-action";
 
-//export const revalidate = 0; //never cache
+export const revalidate = 0; //never cache
 
 const Navbar = async () => {
     const categories = await getCategories();
