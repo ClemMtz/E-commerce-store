@@ -1,6 +1,12 @@
+import Container from "@/components/ui/container"
+
 const HomePage = () => {
     return (
-        <div>Hello Store</div>
+        <Container>
+            <div className="space-y-10 pb-10">
+                <Billboard />
+            </div>
+        </Container>
     )
 }
 
