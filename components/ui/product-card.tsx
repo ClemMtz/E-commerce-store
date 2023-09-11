@@ -8,6 +8,7 @@ import { MouseEventHandler } from "react";
 import { Product } from "@/types";
 
 import usePreviewModal from "@/hooks/use-preview-modal";
+import useCart from "@/hooks/use-cart";
 
 import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
@@ -18,6 +19,7 @@ type ProductCardData = {
 }
 
 const ProductCard = ({ data }: ProductCardData) => {
+    const cart = useCart();
     const previewModal = usePreviewModal();
     const router = useRouter();
 
@@ -29,7 +31,13 @@ const ProductCard = ({ data }: ProductCardData) => {
         event.stopPropagation();
 
         previewModal.onOpen(data);
-    }
+    };
+
+    const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.stopPropagation();
+
+        cart.addItems(data);
+    };
 
     return (
         <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
@@ -47,7 +55,7 @@ const ProductCard = ({ data }: ProductCardData) => {
                             icon={<Expand size={20} className="text-gray-600" />}
                         />
                         <IconButton
-                            onClick={() => { }}
+                            onClick={onAddToCart}
                             icon={<ShoppingCart size={20} className="text-gray-600" />}
                         />
                     </div>
