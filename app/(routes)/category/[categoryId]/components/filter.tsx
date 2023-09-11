@@ -10,19 +10,20 @@ import { cn } from "@/lib/utils";
 
 import Button from "@/components/ui/button";
 
-interface FilterProps {
+type FilterProps = {
     data: (Size | Color)[];
     name: string;
     valueKey: string;
 }
 
-const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
+const Filter = ({ data, name, valueKey }: FilterProps) => {
     const searchParams = useSearchParams();
     const router = useRouter();
 
     const selectedValue = searchParams.get(valueKey);
 
     const onClick = (id: string) => {
+
         const current = qs.parse(searchParams.toString());
 
         const query = {
@@ -39,7 +40,7 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
             query
         }, { skipNull: true })
 
-        router.push(url)
+        router.push(url, { scroll: false })
 
     };
 
