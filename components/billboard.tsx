@@ -2,11 +2,11 @@ import { Billboard } from "@/types";
 
 import NoResults from "@/components/ui/no-results";
 
-interface BillboardProps {
+type BillboardProps = {
     data: Billboard
 };
 
-const Billboard: React.FC<BillboardProps> = ({ data }) => {
+const Billboard = ({ data }: BillboardProps) => {
 
     if (!data) {
         return (<NoResults />)

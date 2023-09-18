@@ -3,14 +3,14 @@ import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 
 
-interface ProductListProps {
+type ProductListProps = {
     title: string;
     items: Product[];
 }
 
 
 
-const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
+const ProductList = ({ title, items }: ProductListProps) => {
 
     return (
         <div className="space-y-4">

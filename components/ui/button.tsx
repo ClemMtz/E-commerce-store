@@ -1,10 +1,10 @@
-import { forwardRef } from "react";
+import { HTMLProps, forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-export interface ButtonProps
-    extends React.ButtonHTMLAttributes<HTMLButtonElement> { }
-
+// export interface ButtonProps
+//     extends React.ButtonHTMLAttributes<HTMLButtonElement> { }
+type ButtonProps = HTMLProps<HTMLButtonElement>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     className,
@@ -40,6 +40,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     )
 });
 
-// Button.displayName = "Button";
+
 
 export default Button;

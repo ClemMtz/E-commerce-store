@@ -14,7 +14,7 @@ import MobileFilters from "./components/mobile-filters";
 
 export const revalidate = 0;
 
-interface CategoryPageProps {
+type CategoryPageProps = {
     params: {
         categoryId: string;
     },
@@ -24,7 +24,7 @@ interface CategoryPageProps {
     }
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = async ({ params, searchParams }) => {
+const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
     const products = await getProducts({
         categoryId: params.categoryId,
         colorId: searchParams.colorId,

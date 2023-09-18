@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 import { Image as ImageType } from "@/types";
 
 
-interface GalleryTabProps {
+type GalleryTabProps = {
     image: ImageType
 }
 
-const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {
+const GalleryTab = ({ image }: GalleryTabProps) => {
     return (
         <Tab className="relative flex aspect-square cursor-pointer items-center rounded-md bg-white">
             {({ selected }) => (

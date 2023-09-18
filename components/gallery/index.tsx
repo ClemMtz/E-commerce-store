@@ -7,11 +7,11 @@ import { Image as ImageType } from "@/types";
 
 import GalleryTab from "./gallery-tab";
 
-interface GalleryProps {
+type GalleryProps = {
     images: ImageType[];
 }
 
-const Gallery: React.FC<GalleryProps> = ({ images }) => {
+const Gallery = ({ images }: GalleryProps) => {
     return (
         <Tab.Group as="div" className="flex flex-col-reverse">
             <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">

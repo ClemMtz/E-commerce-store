@@ -1,11 +1,11 @@
 import { Product } from "@/types";
 import Currency from "@/components/ui/currency";
 
-interface InfoProps {
+type InfoProps = {
     data: Product
 }
 
-const Info: React.FC<InfoProps> = ({ data }) => {
+const Info = ({ data }: InfoProps) => {
     return (
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>

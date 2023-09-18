@@ -7,11 +7,11 @@ const formatteur = new Intl.NumberFormat("en-US", {
     currency: "USD"
 });
 
-interface CurrencyProps {
+type CurrencyProps = {
     value?: string | number;
 }
 
-const Currency: React.FC<CurrencyProps> = ({ value }) => {
+const Currency = ({ value }: CurrencyProps) => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {

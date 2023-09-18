@@ -1,9 +1,9 @@
-interface ContainerProps {
+type ContainerProps = {
     children: React.ReactNode;
 }
 
 
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container = ({ children }: ContainerProps) => {
     return (
         <div className="mx-auto max-v-7xl">
             {children}
