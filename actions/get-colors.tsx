@@ -3,7 +3,6 @@ import { Color } from "@/types";
 import getStoreId from './get-store';
 
 
-
 const getColors = async (): Promise<Color[]> => {
     try {
         const storeId = await getStoreId();
