@@ -1,11 +1,34 @@
 import { Color } from "@/types";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/colors`;
+import getStoreId from './get-store';
+
+
 
 const getColors = async (): Promise<Color[]> => {
-    const res = await fetch(URL);
+    try {
+        const storeId = await getStoreId();
 
-    return res.json();
+        if (!storeId) {
+            throw new Error('No store ID available.');
+        }
+
+        const URL = `${process.env.NEXT_PUBLIC_API_URL}/${storeId}/colors`;
+        const res = await fetch(URL);
+
+        if (res.ok) {
+            const colorsData = await res.json();
+            return colorsData;
+        } else {
+            throw new Error(`Error fetching colors data `);
+        }
+    } catch (error) {
+        console.error('Error fetching colors data:', error);
+        throw error;
+    }
 };
+
+
+
+
 
 export default getColors;

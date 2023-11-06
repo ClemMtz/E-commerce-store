@@ -34,11 +34,12 @@ const Summary = () => {
 
 
     const onCheckout = async () => {
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/3eedd8b8-b1f3-4241-9f46-f9836c01bd44/checkout`, {
             productIds: items.map((item) => item.id)
         });
 
         window.location = response.data.url;
+
     }
 
     return (

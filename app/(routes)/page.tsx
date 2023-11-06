@@ -2,8 +2,6 @@ import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
 import getFirstBillboard from "@/actions/get-first-billboard";
 
-// import axios from 'axios';
-
 import Billboard from "@/components/billboard";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container"
