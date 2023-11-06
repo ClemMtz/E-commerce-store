@@ -39,8 +39,4 @@ export interface Color {
     value: string;
 };
 
-export interface Store {
-    id: string;
-    name: string;
-    userId: string;
-};
+

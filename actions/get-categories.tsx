@@ -3,7 +3,7 @@ import { Category } from "@/types";
 import getStoreId from './get-store';
 
 
-const getCategories = async (): Promise<Category> => {
+const getCategories = async (): Promise<Category[]> => {
     try {
         const storeId = await getStoreId();
 
@@ -22,7 +22,7 @@ const getCategories = async (): Promise<Category> => {
         }
     } catch (error) {
         console.error('Error fetching categories data:', error);
-        throw error;
+        throw error
     }
 };
 
