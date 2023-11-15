@@ -30,7 +30,7 @@ const ProductPage = async ({ params }: ProductPageProps) => {
                         </div>
                     </div>
                     <hr className="my-10" />
-                    <ProductList title="Related Items" items={suggestedProducts} />
+                    <ProductList title="Related Items" items={suggestedProducts} product={product} />
                 </div>
             </Container>
         </div>
