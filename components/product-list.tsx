@@ -6,14 +6,14 @@ import ProductCard from "@/components/ui/product-card";
 type ProductListProps = {
     title: string;
     items: Product[];
-    product: any;
+    product: string;
 }
 
 
 
 const ProductList = ({ title, items, product }: ProductListProps) => {
 
-    const filteredItems = items.filter((item) => item.id !== product.id)
+    const filteredItems = items.filter((item) => item.id !== product)
 
 
     return (
