@@ -6,7 +6,7 @@ import ProductCard from "@/components/ui/product-card";
 type ProductListProps = {
     title: string;
     items: Product[];
-    product: string;
+    product?: string;
 }
 
 
