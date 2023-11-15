@@ -16,7 +16,6 @@ export default async function getFirstBillboard() {
 
         const response = await axios.get(apiUrl);
         const billboardData = response.data[1];
-        console.log(billboardData)
 
         if (billboardData && billboardData.id) {
             return billboardData.id;
