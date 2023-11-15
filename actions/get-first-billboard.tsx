@@ -15,7 +15,7 @@ export default async function getFirstBillboard() {
         const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/${storeId}/billboards`;
 
         const response = await axios.get(apiUrl);
-        const billboardData = response.data[1];
+        const billboardData = response.data[0];
 
         if (billboardData && billboardData.id) {
             return billboardData.id;
