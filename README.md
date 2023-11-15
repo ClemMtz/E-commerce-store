@@ -6,7 +6,7 @@ npm i
 # Setup .env file
 find this key in the setting of the E-commerce-dashboard
 
-NEXT_PUBLIC_API_URL=
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
 
 # Start the app
 npm run dev 
